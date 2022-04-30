@@ -23,7 +23,7 @@ html {
     font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
     height: 300vh;
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /** deletar apos inserção do banner **/
 }
 
 /** Barra de Navegação **/
@@ -39,6 +39,11 @@ html {
     font-weight: 500;
 }
 
+/** substituir placeholder e estilizar
+.nav-logo {
+
+}**/
+
 .nav-menu {
     display: flex;
     justify-content: space-between;
@@ -46,7 +51,7 @@ html {
 }
 
 .nav-item {
-    margin-left: 5rem;
+    margin-left: 2.5rem;
 }
 
 .nav-link{
@@ -56,16 +61,31 @@ html {
 .nav-link:hover{
     color: var(--red);
     display: block;
-    transition: .3s ease-in-out;
+    transition: .4s ease-in-out;
     text-decoration: none;
 }
 
-.nav-logo-small{
+/** Barra de Navegação Responsiva **/
+.hamburger {
     display: none;
 }
 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--white);
+}
 
-
+/** Efeitos Barra de Navegação JavaScript **/
+.bg-color {
+    background-color: var(--gray);
+    color: var(--white);
+    opacity: 90%;
+}
 
 
 
