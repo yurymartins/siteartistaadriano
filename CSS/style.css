@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-/** Variáveis Cores **/
+/* Variáveis Cores */
 :root {
     --gray: #262827;
     --dark-gray: #242323;
@@ -10,7 +10,7 @@
     --light-blue: #add8e6;
 }
 
-/** Estrutura **/
+/* Estrutura */
 * {
     margin: 0;
     padding: 0; 
@@ -23,26 +23,22 @@ html {
     font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
     height: 300vh;
-    background-color: var(--dark-gray); /** deletar apos inserção do banner **/
+    background-color: var(--dark-gray); /* deletar apos inserção do banner */
 }
 
-/** Barra de Navegação **/
+/* Barra de Navegação */
 #navbar {
     display: flex;
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 15rem; 
+    padding: 1rem 15rem 1rem 15rem; 
     margin-top: 0;
     width: 100%;
     text-transform: uppercase;
     font-weight: 500;
 }
 
-/** substituir placeholder e estilizar
-.nav-logo {
-
-}**/
 
 .nav-menu {
     display: flex;
@@ -58,14 +54,15 @@ html {
     color: var(--white);
 }
 
-.nav-link:hover{
+.nav-link:hover,
+.nav-link:focus { /* navegação pelo teclado */
     color: var(--red);
     display: block;
     transition: .4s ease-in-out;
     text-decoration: none;
 }
 
-/** Barra de Navegação Responsiva **/
+/* Barra de Navegação Responsiva */
 .hamburger {
     display: none;
 }
@@ -80,14 +77,67 @@ html {
     background-color: var(--white);
 }
 
-/** Efeitos Barra de Navegação JavaScript **/
+/* Efeitos Barra de Navegação JavaScript */
 .bg-color {
     background-color: var(--gray);
     color: var(--white);
     opacity: 90%;
 }
 
+@media only screen and (max-width: 1140px) {
 
+    #navbar {
+        padding: 1rem 5rem 1.5rem 5rem 
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: 100%;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 40%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.7s;
+        box-shadow: 0 10px 27px var(--shadow);
+    }
+    
+    .nav-menu.active {
+        left: 60%;
+    }
+    
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .nav-link {
+        color: var(--black);
+    }
+    
+    .nav-link:hover {
+        color: var(--dark-green);
+        display: block;
+        transition: .3s ease-in-out;
+    }
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+   
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
 
 
 
