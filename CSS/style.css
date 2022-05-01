@@ -8,7 +8,7 @@
     --black: #000000;
     --red: #e94848;
     --light-blue: #add8e6;
-    --shadow: 0px 3px 7px 3px rgba(102,102,102,0.54);
+    --shadow: 0px 3px 7px 3px rgba(201, 201, 201, 0.54);
 }
 
 /* Estrutura */
@@ -24,7 +24,6 @@ html {
     font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
     height: 300vh;
-    background-color: var(--gray); /* deletar apos inserção do banner */
 }
 
 /* Barra de Navegação */
@@ -96,23 +95,44 @@ html {
     font-size: 20px;
 }
 
-#sobre-mim,
-#blog {
-    height: 600px;
-    background-color: var(--red); /* placeholders */
+/* Seção Sobre mim */
+
+#sobre-mim {
+    display: flex;
 }
 
-#portfolio,
-#contato {
-    height: 600px;
-    background-color: var(--light-blue);  /* placeholders */
+.column {
+    flex: 50%;
+    height: 500px;
 }
+
+.c1-h1 {
+    font-size: 3rem;
+    padding-left: 15rem;
+    padding-top: 5rem;
+    
+}
+
+.c2-h2 {
+    font-size: 1.5rem;
+    padding-right: 15rem;
+    padding-top: 5rem;
+    color: var(--dark-gray);
+}
+
+.c2-h3 {
+    font-size: 0.8rem;
+    padding-right: 15rem;
+    padding-top: 1rem;
+    color: var(--gray);
+}
+
 
 /* Responsividade */
 @media only screen and (max-width: 1140px) {
 
     #navbar {
-        padding: 1rem 5rem 1.5rem 5rem 
+        padding: 1rem 16px 1.5rem 16px; 
     }
 
     .nav-menu {
@@ -121,6 +141,7 @@ html {
         left: 100%;
         flex-direction: column;
         background-color: var(--white);
+        opacity: 90%;
         width: 50%;
         text-align: center;
         transition: 0.7s;
@@ -161,5 +182,21 @@ html {
     
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media only screen and (max-width: 800px) {  /* Banner mobile */
+    .site-background {
+        background: url(/images/bg-medium.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 600px) { /* Banner tablets */
+    .site-background {
+        background: url(/images/bg-small.png);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
