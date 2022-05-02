@@ -7,7 +7,7 @@
     --dark-gray: #242323;
     --white: #ffffff;
     --black: #000000;
-    --red: #dc493a;
+    --red: #fc1900;
     --light-blue: #c4e5f6;
     --shadow: 0px 3px 7px 3px rgba(201, 201, 201, 0.54);
 }
@@ -26,6 +26,15 @@ html {
     scroll-behavior: smooth;
     height: 300vh;
 }
+
+h1::selection,
+h2::selection,
+h3::selection,
+p::selection,
+.text::selection {
+    color: var(--light-blue);
+    background-color: var(--red); /* Muda cor de fonte e texto ao ser selecionado */
+}    
 
 /* Barra de Navegação */
 #navbar {
@@ -86,6 +95,7 @@ html {
 }
 
 /* Banner Principal */
+
 .site-background {
     background: url(/images/bg.png);
     background-repeat: no-repeat;
@@ -102,25 +112,49 @@ html {
     padding-left: 10rem;
     color: var(--white);
     padding-top: 12rem;
-    font-size: 5rem;
-    
+    font-size: 5rem;  
 }
 
-p {
-    -webkit-text-stroke: 0.5px rgb(230, 230, 230);
+.stroke-title {
+    -webkit-text-stroke: 0.5px var(--white);
     -webkit-text-fill-color: transparent;
     font-weight: 700;
 }
-.banner-subtitle-text {
-    display: flex;
-    flex: 50%;
+
+/* Banner Principal Efeito Digitação */
+.container {
+	text-align: left;
+}
+
+.text {
+    font-family: Poppins, sans-serif;
+	display: flex;
     padding-left: 10rem;
     color: var(--white);
-    padding-top: 2rem;
+    font-weight: 600;
+    font-size: 6rem;
+    }
+
+.cursor {
+	display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+	height: 50px;
+	background-color: var(--white);
+	animation: blink .75s step-end infinite;
+    margin-left: 10rem;
+}
+
+@keyframes blink {
+	from, to { 
+		background-color: transparent 
+	}
+	50% { 
+		background-color: var(--white); 
+	}
 }
 
 /* Seção Sobre mim */
-
 #sobre-mim {
     display: flex;
 }
@@ -233,7 +267,7 @@ p {
     }
 }
 
-@media only screen and (max-width: 800px) {  /* Banner mobile */
+@media only screen and (max-width: 800px) {  /* Tablets */
     .site-background {
         background: url(/images/bg-medium.png);
         background-repeat: no-repeat;
@@ -241,7 +275,7 @@ p {
     }
 }
 
-@media only screen and (max-width: 600px) { /* Banner tablets */
+@media only screen and (max-width: 600px) { /* Mobile */
     .site-background {
         background: url(/images/bg-small.png);
         background-repeat: no-repeat;
