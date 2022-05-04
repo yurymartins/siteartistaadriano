@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gelasio&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 /* Variáveis Cores */
 :root {
+    --light-gray: #555;
     --gray: #262827;
     --dark-gray: #242323;
-    --white: #ffffff;
+    --white: #e9e9e9;
     --black: #000000;
     --red: #fc1900;
     --light-blue: #c4e5f6;
@@ -42,26 +44,22 @@ p::selection,
     display: flex;
     position: fixed;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem 10rem 1rem 10rem; 
-    margin-top: 0;
+    padding: 1.2rem 10rem 1rem 10rem; 
     width: 100%;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     z-index: 1;
 }
 
 .nav-menu {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .nav-item {
     margin-left: 2.5rem;
 }
 
-.nav-link{
+.nav-link {
     color: var(--white);
 }
 
@@ -73,7 +71,7 @@ p::selection,
     text-decoration: none;
 }
 
-/* Barra de Navegação Responsiva */
+/* Barra de Navegação Responsiva JavaScript */
 .hamburger {
     display: none;
 }
@@ -96,7 +94,6 @@ p::selection,
 }
 
 /* Banner Principal */
-
 .site-background {
     background: url(/images/bg.png);
     background-repeat: no-repeat;
@@ -113,7 +110,8 @@ p::selection,
     padding-left: 10rem;
     color: var(--white);
     padding-top: 12rem;
-    font-size: 5rem;  
+    font-size: 5rem; 
+    margin-bottom: -30px;
 }
 
 .stroke-title {
@@ -155,6 +153,12 @@ p::selection,
 	}
 }
 
+.banner-social {
+  display: flex;
+  margin-top: 50rem;
+ 
+}
+
 /* Seção Sobre mim */
 #sobre-mim {
     display: flex;
@@ -162,14 +166,17 @@ p::selection,
 
 .column {
     flex: 50%;
-    height: 500px;
+    height: 600px;
 }
 
 .s1-h1 {
-    font-size: 3rem;
+    font-size: 10rem;
+    text-transform: uppercase;
     padding-left: 10rem;
     padding-top: 5rem;
-    
+    color: var(--gray);
+    margin-top: -30px;
+    font-family: Fira Sans, Poppins, sans-serif;
 }
 
 .s2-h2 {
@@ -180,10 +187,23 @@ p::selection,
 }
 
 .s2-h3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding-right: 10rem;
     padding-top: 1rem;
     color: var(--gray);
+}
+
+/* Elementos aparecem ao Scroll */
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 /* Seção Portfólio */
@@ -191,15 +211,15 @@ p::selection,
 #portfolio {
     display: flex;
     background-color: var(--gray);
+   
 }
 
 .p1-h1 {
-    background-color: var(--gray);
+    color: var(--white);
     
 }
 
 /* Seção Citação */
-
 #citacao {
     max-width: 600px;
     margin: 10px 30px;
@@ -210,9 +230,44 @@ p::selection,
     text-align: center;
 }
 
+footer {
+  background-color: #555;
+  color: #bbb;
+  line-height: 1.5;
+}
+
+footer a {
+  text-decoration: none;
+  color: #eee;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.ft-title {
+  color: #fff;
+  font-size: 1.375rem;
+  padding-bottom: 0.625rem;
+}
+
+/* Fixa rodapé no final da página */
+footer {
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  flex: 1;
+}
+/* Principal - Rodapé */
+.ft-main {
+  padding: 1.25rem 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 /* Responsividade */
-@media only screen and (max-width: 1140px) {
+@media only screen and (max-width: 1240px) {
 
     #navbar {
         padding: 1rem 16px 1.5rem 16px; 
@@ -284,110 +339,54 @@ p::selection,
     }
 }
 
-* {
-    box-sizing: border-box;
-    font-family: "Lato", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  footer {
-    background-color: #555;
-    color: #bbb;
-    line-height: 1.5;
-  }
-  footer a {
-    text-decoration: none;
-    color: #eee;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .ft-title {
-    color: #fff;
-    font-size: 1.375rem;
-    padding-bottom: 0.625rem;
-  }
-  /* Sticks footer to bottom */
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  .container {
-    flex: 1;
-  }
-  /* Footer main */
+/* Responsividade Rodapé */
+@media only screen and (min-width: 500px) {
   .ft-main {
-    padding: 1.25rem 1.875rem;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  @media only screen and (min-width: 29.8125rem /* 477px */) {
-    .ft-main {
       justify-content: space-evenly;
-    }
   }
-  @media only screen and (min-width: 77.5rem /* 1240px */) {
-    .ft-main {
-      justify-content: space-evenly;
-    }
+}
+@media only screen and (min-width: 1240px) {
+  .ft-main {
+    justify-content: space-evenly;
   }
-  .ft-main-item {
-    padding: 1.25rem;
-    min-width: 12.5rem;
-  }
-  
-  /* Footer main | Newsletter form */
-  form {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  input[type="email"] {
-    border: 0;
-    padding: 0.625rem;
-    margin-top: 0.3125rem;
-  }
-  input[type="submit"] {
-    background-color: #00d188;
-    color: #fff;
-    cursor: pointer;
-    border: 0;
-    padding: 0.625rem 0.9375rem;
-    margin-top: 0.3125rem;
-  }
-  /* Footer social */
-  .ft-social {
-    padding: 0 1.875rem 1.25rem;
-  }
-  .ft-social-list {
-    display: flex;
-    justify-content: center;
-    border-top: 1px #777 solid;
-    padding-top: 1.25rem;
-  }
-  .ft-social-list li {
-    margin: 0.5rem;
-    font-size: 1.25rem;
-  }
-  /* Footer legal */
-  .ft-legal {
-    padding: 0.9375rem 1.875rem;
-    background-color: #333;
-  }
-  .ft-legal-list {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .ft-legal-list li {
-    margin: 0.125rem 0.625rem;
-    white-space: nowrap;
-  }
-  /* one before the last child */
-  .ft-legal-list li:nth-last-child(2) {
-      flex: 1;
-  }
+}
+.ft-main-item {
+  padding: 1.25rem;
+  min-width: 12.5rem;
+}
+
+/* Footer social */
+.ft-social {
+  padding: 0 1.875rem 1.25rem;
+}
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+  border-top: 1px #777 solid;
+  padding-top: 1.25rem;
+}
+.ft-social-list li {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+/* Footer legal */
+.ft-legal {
+  padding: 0.9375rem 1.875rem;
+  background-color: #333;
+}
+.ft-legal-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ft-legal-list li {
+  margin: 0.125rem 0.625rem;
+  white-space: nowrap;
+}
+/* one before the last child */
+.ft-legal-list li:nth-last-child(2) {
+    flex: 1;
+}
+
+
+
