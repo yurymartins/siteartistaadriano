@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="CSS/style.css">  <!--Arquivo CSS Principal-->
     <link rel="stylesheet" href="css/fontawesome.min.css"> <!--Ícones Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.2.2/photoswipe.min.css" integrity="sha512-aKJqqX25Ch6C/Gae4xBq5gDKhUS2QcNrPoAxqy4fbLr9CqGq7uo/i0aRuti1TUYpZxjXuOr90cTP/aD9WY8CLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--Photoswipe Galeria de Imagens-->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css">
+   
     <title>Adriano Uzah</title>
 </head>
 <body>
     <!--Barra de Navegação-->
     <nav id="navbar">
-        <a href="index.html"><img src="images/logo.png" alt="logo" class="nav-logo"> </a>
+        <a href="#nav-logo"><img src="images/logo.png" alt="logo" id="nav-logo"> </a>
         <ul class="nav-menu">
             <li class="nav-item"><a href="#sobre-mim" class="nav-link">Sobre Mim</a></li>
             <li class="nav-item"><a href="#portfolio" class="nav-link">Galeria</a></li>
@@ -38,7 +40,7 @@
                 <h1 class="banner-text"><p class="stroke-title">Adriano</p>Uzah</h1>
                 <!--Banner Principal Efeito digitação-->
                 <div class="text"></div>
-                <div class="cursor"></div>-->
+                <div class="cursor"></div>
               <div>
                   <!--Ícones Redes Sociais Banner Principal-->
                   <ul class="banner-social">
@@ -46,7 +48,7 @@
                     <li><a href="#"><i class="fab fa-twitter">Twitter</i></a></li>
                     <li><a href="#"><i class="fab fa-instagram">Instagram</i></a></li>
                     <li><a href="#"><i class="fab fa-linkedin">LinkedIn</i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube">Youtube</i></a></li>
+                    <li><a target="_blank" href="https://www.youtube.com/channel/UCImDZ1X66rZ_McphQg-M-Rw"><i class="fab fa-youtube">Youtube</i></a></li>
                   </ul>
               </div>
         </section>
@@ -68,10 +70,12 @@
       <div class="column">
         <h1 class="p1-h1">Meus Trabalhos</h1>
     </div>
-    <div class="column">
-        <h2 class="p2-h2"></h2>
-        <h3 class="p2-h3"></h3>
-    </div>
+        <div class="gallery">
+          <a href="images/img1.png" data-lightbox="mygallery"><img src="images/img1thumb.png"></a>
+          <a href="images/img2.png" data-lightbox="mygallery"><img src="images/img2thumb.png"></a>
+          <a href="images/img3.png" data-lightbox="mygallery"><img src="images/img3thumb.png"></a>
+          <a href="images/img4.png" data-lightbox="mygallery"><img src="images/img4thumb.png"></a>
+        </div>
     </section>
 
     <!--Seção Citação-->
@@ -166,6 +170,6 @@
 </footer>
     <script src="JS/main.js"></script> <!--Arquivo JavaScript Principal-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!--Font Awesome JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.2.2/photoswipe.esm.min.js" integrity="sha512-HTI8kXAgiaGVHWy8S+KIhgHiL72CX0fdsT3BODE1kS/NB2Zs/if8PmsxGqTHbxbktU0/n+4XqD79wZ3mDYOhyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!--Photoswipe JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script> <!--Galeria LightBox 2 / JQuery-->
   </body>
 </html>
