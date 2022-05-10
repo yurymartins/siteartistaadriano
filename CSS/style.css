@@ -8,9 +8,10 @@
     --gray: #262827;
     --dark-gray: #242323;
     --white: #e0dcdc;
-    --black: #000000;
+    --black: #080909;
     --red: #fc1900;
     --light-blue: #c4e5f6;
+    --green: #0DF816;
 }
 
 /* Estrutura */
@@ -25,6 +26,7 @@
 html {
     font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--black);
     height: 300vh;
 }
 
@@ -63,7 +65,8 @@ p::selection,
 }
 
 .nav-link:hover,
-.nav-link:focus { /* navegação pelo teclado */
+/* navegação pelo teclado */
+.nav-link:focus { 
     color: var(--red);
     display: block;
     transition: .4s ease-in-out;
@@ -176,7 +179,6 @@ p::selection,
 #sobre-mim {
     display: flex;
     flex-direction: row;
-    background-color: #080909;
 }
 
 .column {
@@ -193,18 +195,33 @@ p::selection,
     font-family: Montserrat, Poppins, sans-serif;
 }
 
+.dot {
+  color: var(--green);
+}
+
 .s2-h2 {
     font-size: 1,6875rem;
-    padding: 3.3rem 10rem 0 0;
+    margin: 3.5rem 10rem 0 3.9375rem;
     color: #b7b9b9;
     font-family: Poppins, sans-serif;
+    font-weight: 600;
 }
 
 .s2-h3 {
     font-size: 1.25rem;
-    padding: 2.5rem 10rem 0 0;
+    margin: 2.5rem 10rem 0 3.9375rem;
     color: #b7b9b9;
-    font-family: Lato, Poppins, sans-serif;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+
+.vertical-line {
+  position: absolute;
+  width: 0.25rem;
+  height: 16.5625rem;
+  background: var(--green);
+  margin-left: 49.875rem;
+  margin-top: 3.9375rem;
 }
 
 /* Elementos aparecem ao Scroll */
@@ -226,21 +243,19 @@ p::selection,
     display: flex;
     flex: 50%;
     flex-direction: column;
-    background-color: #b7b9b9;
     height: 100vh;
-   
 }
 
 .p1-h1 {
     color: var(--white);
     font-size: 6rem;
-    padding: 2.5rem 10rem 0 10rem;
-    margin-top: -30px; 
-    font-family: Montserrat, Poppins, sans-serif;  
+    margin: 2.75rem 0 0 13.6875rem;
+    font-family: Montserrat, sans-serif; 
+    font-weight: 700;
 }
 
 .gallery {
-  margin: 0 0 20rem 0;
+  margin: 0 0 2.5rem 0;
 }
 
 .gallery img {
@@ -276,7 +291,6 @@ p::selection,
 #blog {
   max-width: 100%;
   height: 500px;
-  background: var(--dark-gray);
 }
 
 /* Rodapé */
@@ -300,6 +314,62 @@ a:hover {
   font-size: 1.375rem;
   padding-bottom: 0.625rem;
 }
+
+/* Seção Disponível para */
+
+#disponivel {
+  display: flex;
+  flex-direction: row;
+}
+
+.disponivel-h1 {
+  height: 100vh;
+  font-size: 6rem;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  margin: 2.5rem 0 0 10rem;
+  font-family: Montserrat, Poppins, sans-serif;
+}
+
+.box-1,
+.box-2,
+.box-3,
+.box-4 {
+  position: absolute;
+  width: 15.8125rem;
+  height: 15.3125rem;
+  background: #090A0C;
+  color: #b7b9b9;
+}
+
+.box-1 {
+  margin: 13rem 0 0 14.25rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.box-2 {
+  margin: 13rem 0 0 32.0625rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.box-3 {
+  margin: 13rem 0 0 49.875rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.box-4 {
+  margin: 13rem 0 0 67.6875rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
 
 /* Fixa rodapé no final da página */
 footer {
