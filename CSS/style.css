@@ -8,6 +8,7 @@
     --gray: #262827;
     --dark-gray: #242323;
     --white: #e0dcdc;
+    --pure-white: #ffffff;
     --black: #080909;
     --red: #fc1900;
     --light-blue: #c4e5f6;
@@ -27,7 +28,6 @@ html {
     font-family: Poppins, sans-serif;
     scroll-behavior: smooth;
     background-color: var(--black);
-    height: 300vh;
 }
 
 /* Muda cor de fonte e fundo ao texto ser selecionado */
@@ -35,6 +35,7 @@ h1::selection,
 h2::selection,
 h3::selection,
 p::selection,
+span::selection,
 .text::selection {
     color: var(--light-blue);
     background-color: var(--red); 
@@ -158,6 +159,19 @@ p::selection,
 	}
 }
 
+/* Elementos aparecem ao Scroll */
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
 /* Ícones Redes Sociais Banner Principal */
 .banner-social {
   display: flex;
@@ -179,11 +193,11 @@ p::selection,
 #sobre-mim {
     display: flex;
     flex-direction: row;
+    height: 45vh;
 }
 
 .column {
     flex: 50%;
-    height: 100vh;
 }
 
 .s1-h1 {
@@ -191,7 +205,7 @@ p::selection,
     letter-spacing: -1.5px;
     font-weight: 700;
     margin: 2.5rem 0 0 10rem;
-    color: #b7b9b9;
+    color: var(--pure-white);
     font-family: Montserrat, Poppins, sans-serif;
 }
 
@@ -200,7 +214,7 @@ p::selection,
 }
 
 .s2-h2 {
-    font-size: 1,6875rem;
+      font-size: 1,6875rem;
     margin: 3.5rem 10rem 0 3.9375rem;
     color: #b7b9b9;
     font-family: Poppins, sans-serif;
@@ -215,26 +229,35 @@ p::selection,
     font-weight: 400;
 }
 
-.vertical-line {
+/* Seção Sobre mim Elementos */
+
+.sobre-mim-box-1,
+.sobre-mim-box-2,
+.sobre-mim-box-3,
+.sobre-mim-box-4 {
+  display: flex;
+  flex-direction: row;
   position: absolute;
-  width: 0.25rem;
-  height: 16.5625rem;
-  background: var(--green);
-  margin-left: 49.875rem;
-  margin-top: 3.9375rem;
+  background: #ffffff;  
+  width: 21rem;
+  height: 21rem;
+  color: var(--white);
 }
 
-/* Elementos aparecem ao Scroll */
-.reveal {
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: all 2s ease;
+.sobre-mim-box-1 {
+  margin-left: 10rem;
 }
 
-.reveal.active {
-  transform: translateY(0px);
-  opacity: 1;
+.sobre-mim-box-2 {
+  margin-left: 36.563rem;
+}
+
+.sobre-mim-box-3 {
+  margin-left: 64rem;
+}
+
+.sobre-mim-box-4 {
+  margin-left: 92.8rem;
 }
 
 /* Seção Portfólio */
@@ -249,24 +272,9 @@ p::selection,
 .p1-h1 {
     color: var(--white);
     font-size: 6rem;
-    margin: 2.75rem 0 0 13.6875rem;
+    margin: 23rem 0 0 13.6875rem;
     font-family: Montserrat, sans-serif; 
     font-weight: 700;
-}
-
-.gallery {
-  margin: 0 0 2.5rem 0;
-}
-
-.gallery img {
-  padding: 04px;
-  filter: grayscale(100%);
-  transition: 1s;
-}
-
-.gallery img:hover {
-  filter: grayscale(0);
-  transform: scale(1.1);
 }
 
 /* Seção Citação */
